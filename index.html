@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="">
+		<title>濮院旅游</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<style>
+		.map1{
+			position: absolute;
+			width: 100%;
+			height: auto;
+			z-index: 3;
+		}
+		.map2{
+			position: absolute;
+			width: 100%;
+			height: auto;
+			z-index: 2;
+		}
+		.map3{
+			position: absolute;
+			width: 100%;
+			height: auto;
+			z-index: 0;
+		}
+		.map4{
+			position: absolute;
+			width: 100%;
+			height: auto;
+			z-index: 4;
+		}
+		.position1 {
+			position: absolute;	
+			top: 32px;
+			left: 260px;
+			width: 354px;
+			height: auto;
+			cursor: pointer;
+			z-index: 1;
+		}
+		.position2{
+			position: absolute;
+			top: 294px;
+			left: 81px;
+			width: 332px;
+			height: auto;
+			cursor: pointer;
+			z-index: 1;
+		}
+		.position3{
+			position: absolute;
+			top: 487px;
+			left: 190px;
+			width: 365px;
+			height: auto;
+			cursor: pointer;
+			z-index: 1;
+		}
+		.position4{
+			position: absolute;
+			top: 742px;
+			left: 47px;
+			width: 288px;
+			height: auto;
+			cursor: pointer;
+			z-index: 1;
+		}
+	</style>
+	<script>
+		localStorage.clear;
+		function addClickCount() {	
+			if (sessionStorage.clickcount) {
+				sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+			} else {
+				sessionStorage.clickcount = 1;
+			}
+		}
+
+		$(document).ready(function(){
+
+			if ( Number(sessionStorage.clickcount) >= 1){
+				$(".map1").css("display","none");
+				$(".map2").css("display","none");				
+			}
+			if ( Number(sessionStorage.clickcount) >= 4){
+				$(".map4").fadeIn(2000);
+			}
+			
+
+
+			$(".position1").click(function(){
+				addClickCount();
+				location.href="position1.html";
+
+			});
+			$(".position2").click(function(){
+				addClickCount();
+				location.href="position2.html";
+			});
+			$(".position3").click(function(){
+				addClickCount();
+				location.href="position3.html";
+			});
+			$(".position4").click(function(){
+				addClickCount();
+				location.href="position4.html";
+			});
+		});
+		function fade1(){
+        	$(".map1").fadeOut(1000);
+		}
+		function fade2(){
+        	$(".map2").fadeOut(1000);
+		}
+	</script>
+
+	<body>
+		<div class="mainMap">
+			<img class="map1" src="res/濮院旅游-地图1.jpg" style="display: inline;" onclick="fade1()">
+			<img class="map2" src="res/濮院旅游-地图2.jpg" style="display: inline;" onclick="fade2()">
+			<img class="map3" src="res/濮院旅游-地图3.jpg">
+			<img class="map4" src="res/濮院旅游-地图4.jpg" style="display: none; ">
+			<img class="position1" src="res/濮院旅游-地点1.png">				
+			<img class="position2" src="res/濮院旅游-地点2.png">				
+			<img class="position3" src="res/濮院旅游-地点3.png">				
+			<img class="position4" src="res/濮院旅游-地点4.png">				
+		</div>
+	</body>
+</html>

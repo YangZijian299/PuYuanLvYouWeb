@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="">
+		<title>濮院旅游</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<style>
+		.position2-intro{
+			position: absolute;
+			width: 640px;
+			height: 1140px;
+			z-index: 3;
+		}
+		.position2-intro2{
+			position: absolute;
+			width: 640px;
+			height: 1140px;
+			z-index: 2;
+		}
+		.position2-button {
+			position: absolute;
+			left: 54px;
+			top: 1006px;
+			width: 195px;
+			height: 79px;
+			z-index: 1;
+		}
+		.box{
+			width: 100%;
+			overflow: hidden;
+			overflow-x: auto;
+			white-space: nowrap !important;
+			font-size: 0px;
+		}
+		.pic{
+            width: auto;
+            height: 1140px;
+		}
+
+	</style>
+
+	<body>
+		<div class="mainMap">
+			<img class="position2-intro" src="res/濮院旅游-地点2介绍.jpg" onclick="show1()">
+			<img class="position2-intro2" src="res/濮院旅游-地点2-画框1.jpg" onclick="show2()">
+			<img class="position2-button" src="res/濮院旅游-地点2-画框.jpg.png" onclick="jump()">
+				<div class="box">
+					<img class="pic" src="res/濮院旅游-地点2-滑动1.jpg">
+					<img class="pic" src="res/濮院旅游-地点2-滑动2.jpg">
+					<img class="pic" src="res/濮院旅游-地点2-滑动3.jpg">
+				</div>
+		</div>
+	</body>
+	<script>
+
+		$(".box").scrollLeft(640);
+		
+		function show1(){
+        	$(".position2-intro").fadeOut(1000);
+		}
+		function show2(){
+        	$(".position2-intro2").fadeOut(1000);
+		}
+		function jump(){
+			location.href="index.html";
+		}
+	</script>
+</html>

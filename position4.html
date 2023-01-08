@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content=""/>
+		<title>濮院旅游</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<style>
+		.box1{
+			position: absolute;
+			width: 100%;
+			overflow: hidden;
+			overflow-x: auto;
+			white-space: nowrap !important;
+			font-size: 0px;
+			z-index: 3;
+		}
+		.box2{
+			position: absolute;
+			width: 100%;
+			overflow: hidden;
+			overflow-x: auto;
+			white-space: nowrap !important;
+			font-size: 0px;
+			z-index: 0;
+		}
+		.position4-pic1{
+            width: auto;
+            height: 1140px;
+		}
+		.position4-pic2{
+            width: auto;
+            height: 1140px;
+		}
+		.position4-pic3{
+            width: auto;
+            height: 1140px;
+		}
+		.position4-pic4{
+            width: auto;
+            height: 1140px;
+		}
+		.position4-intro{
+			position: absolute;
+    		width: 100%;
+    		height: auto;
+    		z-index: 4;
+		}
+		.position4-intro2{
+			position: absolute;
+    		width: 100%;
+    		height: auto;
+    		z-index: 2;
+		}		
+		.position4-img{
+			position: absolute;
+    		width: 100%;
+    		height: auto;
+    		z-index: 1;
+		}
+	</style>
+
+	<body>
+		<div class="mainMap">
+			<img class="position4-intro" src="res/濮院旅游-地点4介绍.jpg" onclick="fade1()">
+			<img class="position4-img" src="res/濮院旅游-地点4-素材.png" style="display: none;" onclick="fade3()">
+			<div class="box1">
+				<img class="position4-pic1" src="res/濮院旅游-地点4-滑动1.jpg">
+				<img class="position4-pic2" src="res/濮院旅游-地点4-滑动2.jpg" onclick="jump()">
+			</div>
+			<img class="position4-intro2" src="res/濮院旅游-地点4-介绍2.jpg" onclick="jump2()">
+			<div class="box2">
+				<img class="position4-pic3" src="res/濮院旅游-地点4-滑动3.jpg">
+				<img class="position4-pic4" src="res/濮院旅游-地点4-滑动4.jpg" onclick="fade2()">				
+			</div>
+		</div>
+	</body>
+	<script>
+		function fade1(){
+        	$(".position4-intro").fadeOut(1000);
+		}
+		function jump(){
+        	$(".box1").fadeOut(1000);
+		}
+		function jump2(){
+        	$(".position4-intro2").fadeOut(1000);
+		}
+		function fade2(){
+        	$(".position4-img").fadeIn(1000);
+		}
+
+		function fade3(){
+			$(".position4-img").fadeOut(1000,function(){
+				location.href="index.html";
+			});	
+		}
+
+	</script>
+</html>

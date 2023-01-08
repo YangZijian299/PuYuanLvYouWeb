@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="">
+		<title>濮院旅游</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<style>
+		.position1-intro{
+			position: absolute;
+			width:100%;
+			height:auto;
+			z-index: 0;
+		}
+		.position1-ringTheBell{
+			position: absolute;
+			width:100%;
+			height:auto;
+			z-index: 1;
+		}
+		.position1-wishes{
+			position: absolute;
+			width:100%;
+			height:auto;
+			z-index: 2;
+		}
+		.box{
+			width: 100%;
+			overflow: hidden;
+			overflow-x: auto;
+			white-space: nowrap !important;
+			font-size: 0px;
+		}
+		.pic{
+            width: 640px;
+            height: 1140px;
+		}
+	</style>
+
+	<body>
+		<div class="mainMap">
+			<img class="position1-intro" src="res/濮院旅游-地点1介绍.jpg" onclick="fade1()">
+			<img class="position1-ringTheBell" src="res/濮院旅游-地点1-敲钟.jpg" style="display: none;" onclick="show2()">
+			<img class="position1-wishes" src="res/濮院旅游-地点1-赢祝福.jpg" style="display: none;" onclick="show3()">
+			<div class="box">
+				<img class="pic" src="res/濮院旅游-地点1-滑动1.jpg">
+				<img class="pic" src="res/濮院旅游-地点1-滑动2.jpg">
+				<img class="pic" src="res/濮院旅游-地点1-滑动3.jpg" onclick="show1()">
+			</div>
+		</div>
+	</body>
+	<script>
+
+		$(".box").scrollLeft(640);
+
+		function fade1(){
+        	$(".position1-intro").fadeOut(1000);
+		}
+		function show1(){
+        	$(".position1-ringTheBell").fadeIn(1000);
+		}
+		function show2(){
+        	$(".position1-wishes").fadeIn(1000);
+		}
+		function show3(){
+			$(".position1-ringTheBell").fadeOut(1000,function(){
+				location.href="index.html";
+			});	
+		}
+	</script>
+</html>
